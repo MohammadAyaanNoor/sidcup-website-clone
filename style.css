@@ -1,0 +1,879 @@
+@font-face {
+    font-family: montregular;
+    src: url(./Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: montbold;
+    src: url(./Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montlight;
+    src: url(./Montserrat-Light.ttf);
+
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+
+
+
+}
+#cursor{
+    transition: scale ease 0.4s;
+    pointer-events: none;
+    position: fixed;
+    z-index: 11;
+    width: 25px;
+    height: 25px;
+    
+    border-radius: 50%;
+    background-color: rgb(157, 201, 34);
+}
+#cursor #blob{
+    transition: scale ease 0.1s;
+    transition: all ease 1s;
+    background-color: #fff;
+    position: absolute;
+    pointer-events: none;
+    z-index: -4;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    opacity: 0.3;
+    translate: -50% -50%;
+    /* animation: rotate 20s ; */
+    animation-iteration-count: infinite;
+    background: radial-gradient(circle,rgba(163, 241, 6, 0.974),#00000032);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 100px 50px rgba(168, 246, 12, 0.66) ;
+    border-radius: 100%;
+    filter: blur(3vw) brightness(1.07);
+
+}
+#blur{
+    width: 100%;
+    height: 100%;
+transition: ease 1s;
+    background: radial-gradient(rgba(168, 246, 12, 0.473),#0000003c);
+    border-radius: 50%;
+    background-color: transparent;
+box-shadow:inset 0 0 100px 5px rgba(168, 246, 12, 0.473) ;
+border-color:transparent;
+border: blur;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: -1;
+}
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }
+    50%{
+        scale: 1 1.2;
+    }
+    100%{
+        rotate: 360deg;
+    }
+    
+}
+#main{
+    width: 100%;
+    background-color: black;
+    overflow-x: hidden;
+    position: relative;
+z-index: 2;
+}
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+#page1{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+#main #overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    
+    background-color: rgba(9, 9, 9, 0.424);
+}
+
+#nav{
+    width: 100vw;
+    z-index: 5;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3vw;
+    font-size: 0.6vw;
+    font-family: montserrat;
+    font-weight: 100;
+    color: white;
+    padding: 2vw;
+
+    padding-left: 6.3vw;
+}
+#nav i{
+    display: none;
+}
+#nav h2{
+    position: relative;
+    z-index: 5;
+    font-family: montregular;
+    font-weight: 500;
+}
+#nav img{
+    width: 6vw;
+}
+#hero1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: montbold;
+    margin-top: 19vw;
+}
+#hero1 h1{
+    position: relative;
+    font-size: 6.7vw;
+    color: white;
+}
+#hero1 h1::before{
+    content: "EAT. DRINK. PLAY";
+    position: absolute;
+    left: -0.4vw;
+    top: -0.4vw;
+    z-index: -1;
+    color: black;
+    -webkit-text-stroke: 2px rgb(120 154 28);
+}
+#hero1 h2{
+    color: white;
+    font-family: montbold;
+    font-weight: 800;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    margin-top: 1.6vw;
+}
+#hero1 p{
+    font-size: 1.3vw;
+    text-align: center;
+    font-family: montlight;
+    font-weight: 200;
+    line-height: 1.5;
+    color: white;
+    margin-top: 1.2vw;
+
+}
+#circlecontainer{
+    width: 13vw;
+    height: 15vw;
+    /* background-color: red; */
+}
+#circlecontainer:hover #circle{
+    transform:  scale(0.4);
+    background-color: rgb(157, 201, 34);
+}
+#circlecontainer:hover i{
+    font-size: 7vw;
+}
+#circle{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border: 2px solid rgb(120 154 28);
+    margin-top: 2.8vw;
+    margin-left: -2.4vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+}
+#circle i{
+    position: absolute;
+    z-index: 9;
+    font-size: 3vw;
+    color: #fff;
+}
+#linear::-webkit-scrollbar{
+    display: none;
+}
+#linear{
+    
+
+    width: 100%;
+    white-space: nowrap;
+    background-color: black;
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    
+}
+.t{
+    overflow: hidden;
+    position: relative;
+    animation: linear 12s linear infinite;
+    flex-shrink: 0;
+}
+#linear h1{
+    font-family: montbold;
+    font-weight: 900;
+    font-size: 6vw;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    display: inline-block;
+    margin-left: -5px;
+    padding: 20px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#linear h1:hover{
+    color: rgb(149 193 31);
+    -webkit-text-stroke-color: rgb(149 193 31);
+
+}
+@keyframes linear {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+#hero2{
+    margin-top: 4vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 3.3vw;
+    background-color: black;
+}
+#hero2 img{
+    width: 10vw;
+    height: 13vw;
+    border-radius: 10px;
+}
+#hero2 #text{
+    text-align: center;
+}
+#text h2{
+    font-family: montbold;
+    font-size: 2.4vw;
+    margin-bottom: 3vw;
+    color: white;
+
+}
+#text p{
+    color: white;
+    font-family: montlight;
+    font-weight: 200;
+    font-size: 1.5vw;
+
+}
+
+#eff1{
+    padding: 3vw 4vw;
+    position: absolute;
+}
+#main #eff1 img{
+    height: 10vw;
+    width: 11vw;
+}
+#cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2vw 5vw;
+    margin-top: 7vw;
+    width: 100vw;
+}
+#cards .card{
+    border-radius: 10px;
+    width: 24vw;
+    height: 30vw;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    font-family: montbold;
+    color:white
+    
+}
+#cards .card img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+#cards .card #yellow{
+    position: absolute;
+    transition: all ease 1s;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 2.5vw;
+    background-color: yellow;
+}
+#cards .card #yellow h2{
+    text-align: left;
+    white-space: nowrap;
+    font-family: montbold;
+    font-weight: 900;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+}
+#cards .card #yellow p{
+    font-size: 1.2vw;
+    font-family: montregular;
+    font-weight: 500;
+}
+#cards .card:hover #yellow{
+    z-index: 99;
+    opacity: 1;
+    
+    
+}
+#cards .card:hover img{
+    transform: scale(1.3);
+}
+
+.card h1{
+    font-size: 2vw;
+    position: absolute;
+    z-index: 4;
+    top: 27vw;
+    font-size: 2vw;
+    padding-left: 1vw;
+}
+.card h3{
+    font-size: 1.4vw;
+    position: absolute;
+    top: 25vw;
+    padding-left: 1vw;
+    z-index: 4;
+}
+#hero3{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: montbold;
+    font-weight: 900;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    background: linear-gradient(to top right, rgb(176, 234, 17),rgb(120 154 28));
+}
+#hero3 h1{
+    text-align: center;
+    font-size: 1.6vw;
+    color:black;
+
+}
+#hero3 .img{
+    height: 10vw;
+    width: 13vw;
+    margin-top: -2vw;
+}
+#hero3 .img img{
+    height: 15vw;
+    width: 30vw;
+}
+#hero3 .img #i{
+    transform: rotateY(180deg) scale(1.9);
+    margin-left: -9.5vw;
+    margin-top: -1vw;
+
+}
+#hero3 .img #i2{
+    transform: scale(1.9);
+    margin-left: -7.3vw;
+    margin-top: -0.3vw;
+
+}
+#hero4{
+    padding: 4vw 3vw;
+    display: flex;
+
+    justify-content: space-between;
+}
+#hero4 #imagediv img{
+    width: 45vw;
+    height: 30vw;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+#hero4 #imagediv #dot{
+    width: 10vw;
+    height: 15vw;
+    position: absolute;
+    z-index: 0;
+    margin-top: 23vw;
+    margin-left: -45vw;
+
+}
+#hero4 #text2{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: left;
+    padding: 3vw 2vw;
+    width: 45vw;
+}
+#text2 h1{
+    font-family: montbold;
+    font-size: 2.7vw;
+}
+#text2 p{
+    font-family: montlight;
+    margin-top: 2vw;
+    font-size: 1.4vw;
+}
+#text2 button{
+    font-family: montregular;
+    margin-top: 3vw;
+    width: 10vw;
+    font-size: 1vw;
+    padding: 0.8vw 0vw;
+    border-radius: 2vw;
+    color: white;
+    background-color: transparent;
+    border: 0.3vw solid rgb(157, 201, 34);
+}
+#slidediv{
+    display: flex;
+    padding-top: 1vw ;
+    padding-bottom: 1vw;
+    overflow: auto;
+    gap: 2.4vw;
+    transform: rotateZ(-3deg);
+}
+#slidediv .square{
+    flex-shrink: 0;
+    border-radius: 25px;
+    overflow: hidden;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+#slidediv .square img{
+    height: 15vw;
+}
+@keyframes slide {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(calc(-1000% - 2.4vw));
+    }
+    
+}
+#follow h2{
+    font-family: montbold;
+    font-size: 2vw;
+    color: white;
+    transform: rotateZ(-3deg);
+    margin-left: 65vw;
+}
+#hero5{
+    display: flex;
+    flex-direction: column;
+    gap: 8vw;
+    margin-top: 8vw;
+
+}
+#hero5 h2{
+    font-family: montbold;
+    text-transform: uppercase;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+}
+
+#hero5 img{
+    width: 4.5vw;
+}
+#hero5 #f{
+    margin-left: 7vw;
+
+}
+#hero5 #s{
+    margin-left: 90vw;
+}
+#hero6{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 9vw;
+}
+#hero6 h1{
+    font-family: montbold;
+    -webkit-text-stroke-width: 0.1vw;
+    -webkit-text-stroke-color: white;
+    color: transparent;
+    font-size: 5.2vw;
+}
+#hero6 #elem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4vw;
+}
+
+#hero6 #elem .elems{
+    height: 10vw;
+    width: 25vw;
+    position: relative;
+    font-family: montbold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgb(176, 234, 17);
+    margin-top: -2vw;
+}
+#hero6 #elem .elems img{
+    object-fit: cover;
+    width: 160%;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+#hero6 #elem .elems:hover img{
+    opacity: 1;
+    transform: scale(0.7);
+    
+}
+#hero6 #elem .elems:hover h2{
+    color: white;
+    opacity: 1;
+}
+#hero6 #elem .elems h2{
+    transition: all ease 0.4s;
+    position: absolute;
+    z-index: 99;
+    opacity: 1;
+    font-size: 2vw;
+    font-weight: 900;
+}
+#footer{
+    background: linear-gradient(to top right,rgb(176, 234, 17),rgb(120 154 28));
+    margin-top: 10vw;
+    padding-top: 7vw;
+    position: relative;
+    z-index: 1;
+
+}
+#footer #dots{
+    position: absolute;
+    z-index: -1;
+    width: 30vw;
+    height: 25vw;
+    margin-top: -6vw;
+}
+#footer #hero7{
+    display: flex;
+    align-items: center;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    gap: 5.6vw;
+}
+#footer #hero7 #f{
+    display: flex;
+    flex-direction: column;
+    margin-left: -7vw;
+    padding: 2vw;
+    gap: 3vw;
+}
+#icons i{
+    font-size: 2.3vw;
+    margin-right: 1vw;
+    cursor: pointer;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+}
+#icons i:hover{
+    color: white;
+}
+#footer #hero7 #f img{
+    width: 9vw;
+}
+#footer #hero7 #s{
+    font-size: 1.1vw;
+    width: 20vw;
+    font-family: montbold;
+}
+#footer #hero7 #t{
+    font-family: montbold;
+    width: 20vw;
+    font-size: 1.1vw;
+}
+#footer #hero7 #fourth{
+    width: 20vw;
+    font-size: 1.1vw;
+}
+#footer #hero7 #fourth p{
+    font-family: montregular;
+    font-weight: 600;
+}
+#footer #hero7 #fourth p small{
+    font-family: montbold;
+    font-size: 2.2vh;
+    font-weight: 600;
+    line-height: 2.1;
+}
+#footer #hero7 #fourth p #dir{
+    font-size: 2.4vh;
+    font-weight: 800;
+    font-family: montbold;
+
+}
+#footer #hero7 h2{
+    margin-top: 0.6vw;
+}
+#footer>small{
+    font-family: montregular;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 2vw;
+    padding: 1vw;
+}
+@media(max-width:600px){
+    #cursor{
+        display: none;
+    }
+    #blur{
+        display: none;
+    }
+    #page1{
+        height: 100vh;
+    }
+    #nav{
+        padding-top: 4vw;
+        padding-bottom: 6vw;
+    }
+    #nav>i{
+        display: initial;
+        font-size: 11vw;
+        margin-left: 61vw;
+        transform: translate(0%,25%);
+
+    }
+    #nav h2{
+        display: none;
+    }
+    #nav img{
+        transform: scale(3.2);
+        margin-top: 5vw;
+        margin-left: 5vw;
+    }
+    #page1 #circlecontainer #circle{
+        position: absolute;
+        top: 173vw;
+        left: 7vw;
+        transform: scale(2.2);
+        border: 0.3vw solid rgb(157, 201, 34);
+    }
+
+    #linear::-webkit-scrollbar{
+        display: none;
+
+    }
+    #linear .t h1{
+        font-weight: 400;
+        font-size: 15vw;
+        -webkit-text-stroke-width: 0.2vw;
+        -webkit-text-stroke-color: #fff;
+        margin-left: -7vw;
+    }
+    #page1 #hero1{
+        position: absolute;
+        top: 55vw;
+        left: 2vw;
+
+    }
+    #page1 #hero1 h1{
+        position: relative;
+        text-align: center;
+        width: 100vw;
+        font-size: 15vw;
+    }
+    #page1 #hero1 h1:before{
+        
+        position: absolute;
+        font-size: 15vw;
+        left: -1.5vw;
+        top: -0.8vw;
+    }
+    #page1 #hero1 h2{
+        font-size: 5vw;
+        text-align: center;
+    }
+    #page1 #hero1 p{
+        font-size: 4vw;
+        width: 70vw;
+
+    }
+    #hero2 #text h2{
+        font-size: 7vw;
+
+    }
+    #hero2 #text p{
+        font-size: 4.7vw;
+    }
+    #cards{
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 50vw;
+        align-items: center;
+        margin-top: 25vw;
+        margin-bottom: 25vw;
+    }
+    #cards .card{
+        transform: scale(2.3);
+        width: 40vw;
+    }
+    #hero3 h1{
+        font-size: 5vw;
+    }
+    #hero4{
+        flex-direction: column;
+        align-items: center;
+    }
+    #hero4 #imagediv{
+        transform: scale(2);
+        margin-bottom: 12vw;
+        margin-top: 13vw;
+    }
+    #text2 h1{
+        margin-left: -20vw;
+        width: 100vw;
+        font-size: 8vw;
+        text-align: left;
+    }
+    #text2 p{
+        margin-left: -20vw;
+        font-size: 3.5vw;
+        width: 95vw;
+        line-height:1.5;
+        color: rgb(162, 161, 161);
+    }
+    #text2 button{
+        margin-left: -10vw;
+        transform: scale(3.2);
+        margin-top: 6vw;
+    }
+    #slidediv{
+        margin-top: 14vw;
+        margin-bottom: 18vw;
+        transform: scale(3) rotateZ(-3deg);
+
+    }
+    #follow h2{
+        font-size: 4vw;
+        margin-left: 10vw;
+    }
+    #hero5{
+        transform: scale(2);
+        width: 20vw;
+        margin-top: 60vw;
+        margin-bottom: 50vw;
+    }
+    #hero5 h2{
+        width: 35vw;
+        font-size: 2.4vw;
+        margin-left: 14vw;
+    }
+    #hero5 img{
+        transform: scale(1);
+    }
+    #hero5 #s{
+        margin-left: 50vw;
+    }
+    #hero6 h1{
+        margin-top: 20vw;
+        margin-bottom: 9vw;
+    }
+    #hero6 #elem{
+        flex-direction: column;
+        gap: 30vw;
+        margin-top: 1vw;
+        margin-bottom: 20vw;
+    }
+    #hero6 #elem .elems img{
+        opacity: 1;
+    }
+    #hero6 #elem .elems h2{
+        color: white;
+    }
+    #hero6  h1{
+        color: rgb(157, 201, 34);
+    }
+    #hero6 #elem .elems{
+        transform: scale(3);
+        width: 30vw;
+        border-radius: 1vw;
+
+
+    }
+    #footer #hero7{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20vw;
+
+    }
+    #hero7 #f{
+        margin-top: 4vw;
+    }
+    #footer #hero7 #f img{
+        transform: scale(3);
+    }
+    #hero7 #s{
+        margin-top: 5vw;
+    }
+    #hero7 #s h2{
+        font-size: 5vw;
+        width: 80vw;
+        margin-left: -15vw;
+
+    }
+    #hero7 #t h2{
+        font-size: 5vw;
+        width: 80vw;
+        margin-left: -15vw;
+    }
+    #hero7 #fourth p{
+        font-size: 5vw;
+        margin-left: -15vw;
+        width: 80vw;
+    }
+   
+    #footer>small{
+        font-size: 5vw;
+    }
+
+
+}
