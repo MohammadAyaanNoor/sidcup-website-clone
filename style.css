@@ -691,9 +691,8 @@ video{
         margin-left: 5vw;
     }
     #page1 #circlecontainer #circle{
-        position: absolute;
-        top: 173vw;
-        left: 7vw;
+        margin-top: 40vw;
+        margin-left: 7vw;
         transform: scale(2.2);
         border: 0.3vw solid rgb(157, 201, 34);
     }
@@ -710,9 +709,9 @@ video{
         margin-left: -7vw;
     }
     #page1 #hero1{
-        position: absolute;
-        top: 55vw;
-        left: 2vw;
+        /* position: absolute; */
+        margin-top: 55vw;
+        /* margin-left: 2vw; */
 
     }
     #page1 #hero1 h1{
@@ -733,8 +732,10 @@ video{
         text-align: center;
     }
     #page1 #hero1 p{
+        text-align: center;
         font-size: 4vw;
-        width: 70vw;
+        width: 80vw;
+        /* white-space: nowrap; */
 
     }
     #hero2 #text h2{
