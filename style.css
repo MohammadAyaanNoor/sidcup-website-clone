@@ -672,6 +672,7 @@ video{
         height: 100vh;
     }
     #nav{
+        background-color: transparent;
         padding-top: 4vw;
         padding-bottom: 6vw;
     }
@@ -691,7 +692,7 @@ video{
         margin-left: 5vw;
     }
     #page1 #circlecontainer #circle{
-        margin-top: 40vw;
+        margin-top: 20vh;
         margin-left: 7vw;
         transform: scale(2.2);
         border: 0.3vw solid rgb(157, 201, 34);
